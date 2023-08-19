@@ -13,36 +13,15 @@
 					</tr>
 					</thead>
 					<tbody>
+					{% for a in da %}
 						<tr>
-							<td>101</td>
-							<td>Atul</td>
-							<td>44454</td>
-							<td>Delhi</td>
+						{% comment %} yaha model(insertdata) ke name ayge name phone city  {% endcomment %}
+							<td>{{a.id}}</td>
+							<td>{{a.name}}</td> 
+							<td>{{a.phone}}</td>
+							<td>{{a.city}}</td>
 						</tr>
-						<tr>
-							<td>101</td>
-							<td>Atul</td>
-							<td>44454</td>
-							<td>Delhi</td>
-						</tr>
-						<tr>
-							<td>101</td>
-							<td>Atul</td>
-							<td>44454</td>
-							<td>Delhi</td>
-						</tr>
-						<tr>
-							<td>101</td>
-							<td>Atul</td>
-							<td>44454</td>
-							<td>Delhi</td>
-						</tr>
-						<tr>
-							<td>101</td>
-							<td>Atul</td>
-							<td>44454</td>
-							<td>Delhi</td>
-						</tr>
+					{% endfor %}	
 					</tbody>
 				</table>
 			</div>							
