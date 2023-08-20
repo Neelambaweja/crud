@@ -7,15 +7,18 @@
 			</div>	
 			<div class="col-sm-6">
 				<br>
-				<input type="text" placeholder="Enter your Name" class="form-control">
+			<form method="POST">
+			{% csrf_token %}
+				<input type="text" name="name" placeholder="Enter your Name" class="form-control">
 				<br>
-				<input type="number" placeholder="Enter your Phone No" class="form-control">
+				<input type="number" name="phone" placeholder="Enter your Phone No" class="form-control">
 				<br>
-				<textarea class="form-control">
+				<textarea class="form-control" name="msg">
 					
 				</textarea>
 				<br>
 				<input type="submit" value="Submit" class="form-control btn-success">
+			</form>
 			</div>							
 		</div>
 	</div>

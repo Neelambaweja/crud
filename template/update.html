@@ -3,18 +3,33 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
+			<form method="POST"> 
+			{% csrf_token %}
 				<h1 style="text-align: center;">Update Data</h1>
-				<input type="text" placeholder="Enter Your Name" class="form-control">
+				<input type="text" name="name" value="{{data1.name}}" placeholder="Enter Your Name" class="form-control">
 				<br>
-				<input type="number" placeholder="Enter Your Phone No" class="form-control">
+				<input type="number" name="phone" value="{{data1.phone}}" placeholder="Enter Your Phone No" class="form-control">
 				<br>
-				<select class="form-control">
-					<option>-------Select City--------</option>
-					<option>Delhi</option>
-					<option>UP</option>
+				<select class="form-control" name="city">
+					{% if data1.city == "-------Select City--------" %}
+						<option selected>-------Select City--------</option>
+					{% else %}
+						<option>-------Select City--------</option>
+					{% endif %}
+					{% if data1.city == "Delhi" %}
+						<option selected>Delhi</option>  
+					{% else %}
+						<option>Delhi</option>
+					{% endif %}
+					{% if data1.city == "UP" %}
+						<option selected>UP</option>
+					{% else %}
+						<option>UP</option>
+					{% endif %}
 				</select>
 				<br>
 				<input type="submit" value="Insert" class="form-control btn-success " name="">
+			</form>
 			</div>						
 		</div>
 	</div>
